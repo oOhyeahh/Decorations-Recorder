@@ -16,17 +16,21 @@ class TargetList extends Component {
 	}
 
 	render() {
-		console.log(this.props.targets);
 		return (
 			<React.Fragment>
 				<List subheader={<p>Target Decoration</p>}>
 					<Divider />
-
 					{this.props.targets &&
 						this.props.targets.map(target => (
 							<ListItem key={target.id}>
 								<ListItemText primary={target.description} />
-								<Button variant="outlined" color="secondary" onClick={() => this.props.deleteDecortation(target.id)}>
+								<Button
+									variant="outlined"
+									color="secondary"
+									onClick={() =>
+										this.props.deleteDecortation(target.id)										
+									}
+								>
 									Remove
 								</Button>
 							</ListItem>
@@ -35,8 +39,12 @@ class TargetList extends Component {
 				<Divider />
 				<Autocomplete
 					freeSolo
-					options={this.props.targets}
-					getOptionLabel={option => option.description}
+					options={this.props.decoration}
+					getOptionLabel={option => option.name}
+					groupBy={option => option.rarity}
+					onChange={(event, value) =>
+						this.setState({ target: value ? value.name : "" })
+					}
 					renderInput={params => (
 						<TextField
 							{...params}
@@ -64,7 +72,8 @@ class TargetList extends Component {
 function mapStateToProps(state) {
 	return {
 		targets: state.target.targets,
-		target: state.target.target
+		target: state.target.target,
+		decoration: state.decoration.decorations
 	};
 }
 
@@ -73,9 +82,9 @@ const mapDispatchToProps = (dispatch, data) => {
 		addDecortation: data => {
 			dispatch(addDecortation(data));
 		},
-    deleteDecortation: data => {
-      dispatch(deleteDecortation(data));
-    }
+		deleteDecortation: data => {
+			dispatch(deleteDecortation(data));
+		}
 	};
 };
 

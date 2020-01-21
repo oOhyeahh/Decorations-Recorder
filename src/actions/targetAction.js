@@ -1,10 +1,9 @@
 import { ADD_TARGET, DELETE_TARGET } from "../actions/types";
 
-let targetId = 0;
-export const addDecortation = decortation => {
+export const addDecortation = description => {
 	return {
 		type: ADD_TARGET,
-		payload: { id: targetId + 1, description: decortation }
+		payload: description
 	};
 };
 

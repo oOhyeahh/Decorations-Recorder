@@ -10,12 +10,15 @@ export default function(state = initialState, action) {
     case ADD_TARGET:
       return {
         ...state,
-        targets: state.targets.concat(action.payload)
+        targets: state.targets.concat({
+          id: state.targets.length,
+          description: action.payload
+        })
       };    
     case DELETE_TARGET:
       return {
         ...state,
-        targets: state.targets.splice(action.payload, 1)
+        targets: state.targets.filter(({ id }) => id !== action.payload)
       };      
     default:
       return state;
