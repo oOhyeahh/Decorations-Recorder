@@ -27,10 +27,7 @@ class TargetList extends Component {
 								<Button
 									variant="outlined"
 									color="secondary"
-									onClick={() =>
-										this.props.deleteDecortation(target.id)										
-									}
-								>
+									onClick={() => this.props.deleteDecortation(target.id)}>
 									Remove
 								</Button>
 							</ListItem>
@@ -42,26 +39,18 @@ class TargetList extends Component {
 					options={this.props.decoration}
 					getOptionLabel={option => option.name}
 					groupBy={option => option.rarity}
-					onChange={(event, value) =>
-						this.setState({ target: value ? value.name : "" })
-					}
+					onChange={(event, value) => this.setState({ target: value ? value.name : "" })}
 					renderInput={params => (
 						<TextField
 							{...params}
 							label="Enter Your Target Decoration"
 							variant="outlined"
 							fullWidth
-							onChange={e =>
-								this.setState({ target: e.target.value })
-							}
+							onChange={e => this.setState({ target: e.target.value })}
 						/>
 					)}
 				/>
-				<Button
-					variant="contained"
-					color="primary"
-					onClick={() => this.props.addDecortation(this.state.target)}
-				>
+				<Button variant="contained" color="primary" onClick={() => this.props.addDecortation(this.state.target)}>
 					Add to Target List
 				</Button>
 			</React.Fragment>

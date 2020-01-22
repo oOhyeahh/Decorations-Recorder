@@ -1,4 +1,4 @@
-import { ADD_TARGET, DELETE_TARGET } from "../actions/types";
+import { ADD_TARGET, DELETE_TARGET, ADD_RECORD } from "../actions/types";
 
 export const addDecortation = description => {
 	return {
@@ -13,3 +13,10 @@ export const deleteDecortation = id => {
 		payload: id
 	};
 };
+
+export const addRecord = record => {
+	return {
+		type: ADD_RECORD,
+		payload: record
+	}
+}
