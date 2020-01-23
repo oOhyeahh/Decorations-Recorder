@@ -81,7 +81,7 @@ function StickyHeadTable(props) {
 						{props.record &&
 							props.record.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(record => {
 								return (
-									<TableRow hover role="checkbox" tabIndex={-1} key={record.id}>
+									<TableRow hover role="checkbox" tabIndex={-1} key={record.round}>
 										{columns.map(column => {
 											const value = record[column.id];
 											return (

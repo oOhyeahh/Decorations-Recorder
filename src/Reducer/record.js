@@ -6,42 +6,6 @@ const initialState = {
 			first: "Antidote Jewel 1",
 			second: "Antidote Jewel 1",
 			third: "Antidote Jewel 1"
-		},
-		{
-			round: 1,
-			first: "Antidote Jewel 1",
-			second: "Antidote Jewel 1",
-			third: "Antidote Jewel 1"
-		},
-		{
-			round: 1,
-			first: "Antidote Jewel 1",
-			second: "Antidote Jewel 1",
-			third: "Antidote Jewel 1"
-		},
-		{
-			round: 1,
-			first: "Antidote Jewel 1",
-			second: "Antidote Jewel 1",
-			third: "Antidote Jewel 1"
-		},
-		{
-			round: 1,
-			first: "Antidote Jewel 1",
-			second: "Antidote Jewel 1",
-			third: "Antidote Jewel 1"
-		},
-		{
-			round: 1,
-			first: "Antidote Jewel 1",
-			second: "Antidote Jewel 1",
-			third: "Antidote Jewel 1"
-		},
-		{
-			round: 1,
-			first: "Antidote Jewel 1",
-			second: "Antidote Jewel 1",
-			third: "Antidote Jewel 1"
 		}
 	]
 };

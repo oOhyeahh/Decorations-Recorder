@@ -10,6 +10,7 @@ import Divider from "@material-ui/core/Divider";
 // component
 import TargetList from "./Components/TargetList/TargetList";
 import RecordTable from "./Components/RecordTable/RecordTable";
+import RecordForm from "./Components/RecordForm/RecordForm";
 
 function App() {
 	return (
@@ -24,9 +25,14 @@ function App() {
 					A tool to record "washing" decorations
 				</Typography>
 				<Divider />
-				<Grid container spacing={3}>
-					<Grid item xs>
+				<Grid container spacing={5}>
+					<Grid item xs={6}>
 						<TargetList />
+					</Grid>
+					<Grid item xs={6}>
+						<Box m={2} p={2} border={1} borderColor="primary.main">
+							<RecordForm />
+						</Box>
 					</Grid>
 					<Grid item xs>
 						<RecordTable />
